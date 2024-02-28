@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../veiw/home/book_page/categoris_page.dart';
 
 yearsCategorise() {
   return Container(
@@ -13,11 +16,16 @@ yearsCategorise() {
       ),
       itemCount: 6,
       itemBuilder: (BuildContext context, int index) {
-        return Container(
-          margin: const EdgeInsets.all(5),
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(15)),
-          child: Center(child: Text("${2018 + index}")),
+        return InkWell(
+          onTap: () {
+            Get.to(CategorisPage(name: "${2018 + index}"));
+          },
+          child: Container(
+            margin: const EdgeInsets.all(5),
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(15)),
+            child: Center(child: Text("${2018 + index}")),
+          ),
         );
       },
     ),
