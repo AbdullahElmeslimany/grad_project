@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
                 ],
               ),
               const Text(
-                "تستطتيع ايجاد ما تبحث عنه في  \nمشاريع التخرج السابقة",
+                "تستطيع ايجاد ما تبحث عنه في  \nمشاريع التخرج السابقة",
                 style: TextStyle(fontSize: 15, color: Colors.grey),
               ),
               const Divider(),

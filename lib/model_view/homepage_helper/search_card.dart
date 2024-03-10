@@ -9,7 +9,7 @@ searchCardHomePage(BuildContext context) {
         width: MediaQuery.sizeOf(context).width - 110,
         margin: const EdgeInsets.all(9),
         child: TextFormField(
-          readOnly: true,
+          // readOnly: true,
           onTap: () {},
           cursorHeight: 13,
           style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:grad_project/veiw/home/homepage.dart';
+import 'veiw/home/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'مشاريع التخرج',
+      title: 'مكتبة مشاريع التخرج',
       theme: ThemeData(
           scaffoldBackgroundColor: Colors.grey.shade100,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

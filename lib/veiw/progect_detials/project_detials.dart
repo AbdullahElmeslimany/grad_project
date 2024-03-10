@@ -151,8 +151,8 @@ class ProjectDetials extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: 85,
-                  padding: const EdgeInsets.all(18),
+                  height: 90,
+                  padding: const EdgeInsets.all(17),
                   margin:
                       const EdgeInsets.symmetric(vertical: 1, horizontal: 10),
                   decoration: BoxDecoration(
@@ -190,49 +190,49 @@ class ProjectDetials extends StatelessWidget {
                     ],
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        ": اعداد",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.grey.shade500),
-                      ),
-                    ),
-                  ],
-                ),
-                Container(
-                  height: 180,
-                  padding: const EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15)),
-                  child: GridView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            mainAxisExtent: 28,
-                            crossAxisCount: 2,
-                            mainAxisSpacing: 2),
-                    itemCount: nameStudent.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: Text(
-                          "${nameStudent[index]["name"]}",
-                          style: const TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.black),
-                        ),
-                      );
-                    },
-                  ),
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: [
+                //     Padding(
+                //       padding: const EdgeInsets.all(8.0),
+                //       child: Text(
+                //         ": اعداد",
+                //         style: TextStyle(
+                //             fontSize: 14,
+                //             fontWeight: FontWeight.w900,
+                //             color: Colors.grey.shade500),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                // Container(
+                //   height: 180,
+                //   padding: const EdgeInsets.all(15),
+                //   decoration: BoxDecoration(
+                //       color: Colors.white,
+                //       borderRadius: BorderRadius.circular(15)),
+                //   child: GridView.builder(
+                //     physics: const NeverScrollableScrollPhysics(),
+                //     gridDelegate:
+                //         const SliverGridDelegateWithFixedCrossAxisCount(
+                //             mainAxisExtent: 28,
+                //             crossAxisCount: 2,
+                //             mainAxisSpacing: 2),
+                //     itemCount: nameStudent.length,
+                //     itemBuilder: (BuildContext context, int index) {
+                //       return Directionality(
+                //         textDirection: TextDirection.rtl,
+                //         child: Text(
+                //           "${nameStudent[index]["name"]}",
+                //           style: const TextStyle(
+                //               fontSize: 12,
+                //               fontWeight: FontWeight.w900,
+                //               color: Colors.black),
+                //         ),
+                //       );
+                //     },
+                //   ),
+                // ),
                 Container(
                   // height: 85,
                   padding: const EdgeInsets.all(18),
@@ -284,18 +284,27 @@ class ProjectDetials extends StatelessWidget {
                         ),
                       ),
                       const Gap(10),
-                      SizedBox(
-                        height: imagelang.length * 30,
+                      Container(
+                        height: imagelang.length * 27,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 15),
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(162, 215, 90, 45),
+                            borderRadius: BorderRadius.circular(15)),
                         child: GridView.builder(
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 4,
-                          ),
+                                  crossAxisCount: 3,
+                                  crossAxisSpacing: 50,
+                                  mainAxisSpacing: 10),
                           itemCount: imagelang.length,
                           itemBuilder: (BuildContext context, int index) {
-                            return Image.asset(
-                              imagelang[index],
-                              height: 15,
+                            return ClipRRect(
+                              borderRadius: BorderRadius.circular(70),
+                              child: Image.asset(
+                                imagelang[index],
+                                height: 15,
+                              ),
                             );
                           },
                         ),
@@ -329,7 +338,7 @@ List imagelang = [
   "assets/langcode/a.jpg",
   "assets/langcode/b.png",
   "assets/langcode/c.png",
-  "assets/langcode/d.jpg",
+  // "assets/langcode/d.jpg",
   "assets/langcode/e.jpg",
   "assets/langcode/f.jpg",
   "assets/langcode/g.png"
