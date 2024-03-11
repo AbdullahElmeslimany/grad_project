@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:grad_project/veiw/progect_detials/project_detials.dart';
+import 'package:grad_project/view/progect_detials/project_detials.dart';
 
 class CategorisPage extends StatelessWidget {
   final String name;
@@ -11,16 +11,23 @@ class CategorisPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Center(
+            child: Text(
+          name,
+          style: const TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+        )),
+      ),
       body: SafeArea(
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const Gap(15),
-          Center(
-              child: Text(
-            name,
-            style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-          )),
+          // Center(
+          //     child: Text(
+          //   name,
+          //   style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+          // )),
           Expanded(
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 15),

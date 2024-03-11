@@ -285,7 +285,7 @@ class ProjectDetials extends StatelessWidget {
                       ),
                       const Gap(10),
                       Container(
-                        height: imagelang.length * 27,
+                        height: imagelang.length * 30,
                         padding: const EdgeInsets.symmetric(
                             horizontal: 15, vertical: 15),
                         decoration: BoxDecoration(

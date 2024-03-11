@@ -9,6 +9,7 @@ searchCardHomePage(BuildContext context) {
         width: MediaQuery.sizeOf(context).width - 110,
         margin: const EdgeInsets.all(9),
         child: TextFormField(
+          textDirection: TextDirection.rtl,
           // readOnly: true,
           onTap: () {},
           cursorHeight: 13,
@@ -21,7 +22,7 @@ searchCardHomePage(BuildContext context) {
                 borderRadius: BorderRadius.all(Radius.circular(15))),
             labelText: "ابحث باسم المشروع",
           ),
-          textAlign: TextAlign.end,
+          textAlign: TextAlign.start,
           validator: (value) {
             return null;
           },

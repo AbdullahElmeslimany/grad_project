@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grad_project/model_view/constant/category_list.dart/category_list_constant.dart';
-import 'package:grad_project/veiw/home/book_page/categoris_page.dart';
+import 'package:grad_project/view/book_page/categoris_page.dart';
 
 categoryCard() {
   return Container(
@@ -19,7 +19,7 @@ categoryCard() {
       itemBuilder: (BuildContext context, int index) {
         return InkWell(
           onTap: () {
-            Get.to(CategorisPage(name:categoryList[index]["name"]));
+            Get.to(CategorisPage(name: categoryList[index]["name"]));
           },
           child: Container(
             margin: const EdgeInsets.all(5),
