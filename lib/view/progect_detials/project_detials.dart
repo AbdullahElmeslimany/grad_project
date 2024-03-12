@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
 class ProjectDetials extends StatelessWidget {
@@ -190,49 +189,49 @@ class ProjectDetials extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.end,
-                //   children: [
-                //     Padding(
-                //       padding: const EdgeInsets.all(8.0),
-                //       child: Text(
-                //         ": اعداد",
-                //         style: TextStyle(
-                //             fontSize: 14,
-                //             fontWeight: FontWeight.w900,
-                //             color: Colors.grey.shade500),
-                //       ),
-                //     ),
-                //   ],
-                // ),
-                // Container(
-                //   height: 180,
-                //   padding: const EdgeInsets.all(15),
-                //   decoration: BoxDecoration(
-                //       color: Colors.white,
-                //       borderRadius: BorderRadius.circular(15)),
-                //   child: GridView.builder(
-                //     physics: const NeverScrollableScrollPhysics(),
-                //     gridDelegate:
-                //         const SliverGridDelegateWithFixedCrossAxisCount(
-                //             mainAxisExtent: 28,
-                //             crossAxisCount: 2,
-                //             mainAxisSpacing: 2),
-                //     itemCount: nameStudent.length,
-                //     itemBuilder: (BuildContext context, int index) {
-                //       return Directionality(
-                //         textDirection: TextDirection.rtl,
-                //         child: Text(
-                //           "${nameStudent[index]["name"]}",
-                //           style: const TextStyle(
-                //               fontSize: 12,
-                //               fontWeight: FontWeight.w900,
-                //               color: Colors.black),
-                //         ),
-                //       );
-                //     },
-                //   ),
-                // ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        ": اعداد",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.grey.shade500),
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  height: 180,
+                  padding: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15)),
+                  child: GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            mainAxisExtent: 28,
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 2),
+                    itemCount: nameStudent.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Text(
+                          "${nameStudent[index]["name"]}",
+                          style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.black),
+                        ),
+                      );
+                    },
+                  ),
+                ),
                 Container(
                   // height: 85,
                   padding: const EdgeInsets.all(18),

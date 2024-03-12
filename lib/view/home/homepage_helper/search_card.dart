@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:grad_project/view/search_page/search_page.dart';
 
 searchCardHomePage(BuildContext context) {
   return Row(
@@ -9,9 +11,12 @@ searchCardHomePage(BuildContext context) {
         width: MediaQuery.sizeOf(context).width - 110,
         margin: const EdgeInsets.all(9),
         child: TextFormField(
+          // enabled: false,S
           textDirection: TextDirection.rtl,
-          // readOnly: true,
-          onTap: () {},
+          readOnly: true,
+          onTap: () {
+            Get.to(const SearchPage());
+          },
           cursorHeight: 13,
           style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
           decoration: InputDecoration(

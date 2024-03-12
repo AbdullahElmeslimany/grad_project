@@ -4,6 +4,6 @@ List categoryList = [
   {"name": "الكترونيات", "image": "assets/images/electronic2.png"},
   {"name": "الزراعه", "image": "assets/images/grow.png"},
   {"name": "روبوتات", "image": "assets/images/robot.png"},
-  {"name": "", "image": "assets/images/team.png"},
+  {"name": "الفريق", "image": "assets/images/team.png"},
   {"name": "اجتماعي", "image": "assets/images/worker.png"},
 ];

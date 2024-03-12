@@ -63,6 +63,7 @@ class LoginPage extends StatelessWidget {
                                 height: 17,
                               ),
                               textFromFieldcustom(
+                                  pass: true,
                                   hight: 19,
                                   width: MediaQuery.sizeOf(context).width - 50,
                                   controller: passwordController,

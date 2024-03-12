@@ -7,10 +7,12 @@ import 'package:grad_project/model/cubit/select_image_cubit.dart';
 import 'package:grad_project/view/home/homepage.dart';
 import 'view/add_project/add_project.dart';
 import 'view/login_signup/login.dart';
+import 'view/search_page/search_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
               bodyMedium: GoogleFonts.alexandria(),
             )),
         home: const Directionality(
-            textDirection: TextDirection.rtl, child: MyHomePage()),
+            textDirection: TextDirection.rtl, child: LoginPage()),
       ),
     );
   }

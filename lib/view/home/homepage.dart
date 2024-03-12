@@ -1,9 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grad_project/view/add_project/add_project.dart';
 import 'package:grad_project/view/home/homepage_helper/cardimportant_homepage.dart';
 import 'package:grad_project/view/home/homepage_helper/categorycard_homepage.dart';
 import 'package:grad_project/view/home/homepage_helper/search_card.dart';
@@ -15,6 +14,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isAdmin = true;
     return Scaffold(
       body: SafeArea(
           child: Directionality(
@@ -47,9 +47,25 @@ class MyHomePage extends StatelessWidget {
                     )
                   ],
                 ),
-                const Text(
-                  "تستطيع ايجاد ما تبحث عنه في  \nمشاريع التخرج السابقة",
-                  style: TextStyle(fontSize: 15, color: Colors.grey),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      "تستطيع ايجاد ما تبحث عنه في  \nمشاريع التخرج السابقة",
+                      style: TextStyle(fontSize: 15, color: Colors.grey),
+                    ),
+                    if (isAdmin == true)
+                      IconButton(
+                          onPressed: () {
+                            Get.to(const AddProject());
+                          },
+                          icon: const Icon(
+                            Icons.playlist_add_sharp,
+                            size: 32,
+                          ))
+                    else
+                      Container(),
+                  ],
                 ),
                 const Divider(),
                 searchCardHomePage(context),

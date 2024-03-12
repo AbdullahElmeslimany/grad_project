@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 textFromFieldcustom({
+  bool backgroundAnable = false,
   bool rtl = false,
+  bool pass = false,
   maxLines = 1,
   TextInputType keyboardType = TextInputType.name,
   length = false,
@@ -15,6 +17,7 @@ textFromFieldcustom({
   return SizedBox(
     width: width,
     child: TextFormField(
+      obscureText: pass,
       textDirection: rtl == true ? TextDirection.ltr : TextDirection.rtl,
       maxLines: maxLines,
       maxLength: length == true ? 250 : null,
@@ -30,8 +33,8 @@ textFromFieldcustom({
       decoration: InputDecoration(
           contentPadding:
               EdgeInsets.symmetric(horizontal: padding, vertical: hight),
-          filled: false,
-          fillColor: Colors.grey,
+          filled: backgroundAnable,
+          fillColor: Colors.white,
           border: const OutlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.grey,

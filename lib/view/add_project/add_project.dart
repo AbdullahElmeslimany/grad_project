@@ -58,7 +58,10 @@ class AddProject extends StatelessWidget {
                             BlocProvider.of<SelectImageCubit>(context)
                                 .selectImage();
                           },
-                          icon: const Icon(Icons.image)),
+                          icon: const Icon(
+                            Icons.image,
+                            size: 50,
+                          )),
                     const Gap(20),
                     textFromFieldcustom(
                         rtl: true,
