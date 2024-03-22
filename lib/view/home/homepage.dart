@@ -10,7 +10,8 @@ import 'package:grad_project/view/home/homepage_helper/years_categorise.dart';
 import 'package:grad_project/view/setting_page/setting_page.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  final String uID;
+  const MyHomePage({super.key, required this.uID});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,9 @@ class MyHomePage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Get.to(const SettingPage());
+                        Get.to(SettingPage(
+                          uID: uID,
+                        ));
                       },
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(25),

@@ -10,8 +10,10 @@ class SplachScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future.delayed(const Duration(milliseconds: 2300), () {
-      Get.to(const Directionality(
-          textDirection: TextDirection.rtl, child: MyHomePage()));
+      // Get.to(
+      //   const Directionality(
+      //       textDirection: TextDirection.rtl, child: MyHomePage()),
+      // );
     });
     return Scaffold(
       body: SizedBox(

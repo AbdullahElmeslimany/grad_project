@@ -11,6 +11,7 @@ import 'view/add_project/add_project.dart';
 import 'model_view/bloc/categoris_cubit/get_categoris_data_cubit.dart';
 import 'view/login_signup/login.dart';
 import 'view/search_page/search_page.dart';
+import 'model_view/bloc/profile_cubit/get_data_profile_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +33,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<GetCategorisDataCubit>(
           create: (BuildContext context) => GetCategorisDataCubit(),
+        ),
+        BlocProvider<GetDataProfileCubit>(
+          create: (BuildContext context) => GetDataProfileCubit(),
         ),
       ],
       child: GetMaterialApp(

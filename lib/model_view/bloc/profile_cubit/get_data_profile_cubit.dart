@@ -7,12 +7,17 @@ part 'get_data_profile_state.dart';
 class GetDataProfileCubit extends Cubit<GetDataProfileState> {
   GetDataProfileCubit() : super(GetDataProfileInitial());
   List data = [];
+  bool loading = true;
   getData({required String uID}) async {
-    QuerySnapshot users =
-        await FirebaseFirestore.instance.collection('user').where({
-      "Uid",
-    }).get();
-
+    print(uID);
+    emit(WaitingProfileState());
+    QuerySnapshot users = await FirebaseFirestore.instance
+        .collection('user')
+        .where("Uid", isEqualTo: uID)
+        .get();
+    loading = false;
     data.addAll(users.docs);
+    print(data[0]["name"]);
+    emit(SucessDataProfileState(data: data));
   }
 }
