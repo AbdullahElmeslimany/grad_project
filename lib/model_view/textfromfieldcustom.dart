@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 textFromFieldcustom({
   bool backgroundAnable = false,
   bool rtl = false,
+  bool enabel = true,
   bool pass = false,
   maxLines = 1,
   TextInputType keyboardType = TextInputType.name,
@@ -17,6 +18,7 @@ textFromFieldcustom({
   return SizedBox(
     width: width,
     child: TextFormField(
+      enabled: enabel,
       obscureText: pass,
       textDirection: rtl == true ? TextDirection.ltr : TextDirection.rtl,
       maxLines: maxLines,

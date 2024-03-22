@@ -79,7 +79,7 @@ class RegesterPage extends StatelessWidget {
                                     hight: 18,
                                     width:
                                         MediaQuery.sizeOf(context).width - 50,
-                                    controller: emailController,
+                                    controller: emailRController,
                                     text: "البريد الالكتروني"),
                                 const Gap(10),
                                 textFromFieldcustom(
@@ -96,7 +96,7 @@ class RegesterPage extends StatelessWidget {
                                     hight: 18,
                                     width:
                                         MediaQuery.sizeOf(context).width - 50,
-                                    controller: passwordController,
+                                    controller: passwordRController,
                                     text: "الباسورد"),
                               ],
                             ),
@@ -127,8 +127,8 @@ class RegesterPage extends StatelessWidget {
                                       admin: true,
                                       idunversty: idController.text,
                                       name: namecontrol.text,
-                                      email: emailController.text,
-                                      password: passwordController.text);
+                                      email: emailRController.text,
+                                      password: passwordRController.text);
                                 }
                               },
                             ),

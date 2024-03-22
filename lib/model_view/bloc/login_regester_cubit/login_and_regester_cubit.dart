@@ -5,6 +5,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 import '../../../view/home/homepage.dart';
+import '../../controller/login_controller.dart';
+import '../../controller/regester_controller.dart';
 part 'login_and_regester_state.dart';
 
 class LoginAndRegesterCubit extends Cubit<LoginAndRegesterState> {
@@ -13,12 +15,10 @@ class LoginAndRegesterCubit extends Cubit<LoginAndRegesterState> {
   login({required String email, required String password}) async {
     loading = true;
     emit(WaitingState());
-
     Future.delayed(
       const Duration(seconds: 5),
       () {
         emit(WaitingState());
-
         loading = false;
       },
     );
@@ -30,6 +30,9 @@ class LoginAndRegesterCubit extends Cubit<LoginAndRegesterState> {
                 uID: value.user!.uid,
               )));
       loading = false;
+      emailController.clear();
+      passwordController.clear();
+      loginkey.currentState!.reset();
       emit(SignUpSuccessState());
     } on FirebaseAuthException catch (e) {
       loading = false;
@@ -77,6 +80,11 @@ class LoginAndRegesterCubit extends Cubit<LoginAndRegesterState> {
               uID: value.user!.uid,
             ));
       });
+      namecontrol.clear();
+      idController.clear();
+      emailRController.clear();
+      passwordRController.clear();
+      regesterKey.currentState!.reset();
       loading = false;
 
       emit(LoginSuccessState());
