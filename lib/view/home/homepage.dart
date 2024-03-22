@@ -7,7 +7,7 @@ import 'package:grad_project/view/home/homepage_helper/cardimportant_homepage.da
 import 'package:grad_project/view/home/homepage_helper/categorycard_homepage.dart';
 import 'package:grad_project/view/home/homepage_helper/search_card.dart';
 import 'package:grad_project/view/home/homepage_helper/years_categorise.dart';
-import 'package:grad_project/view/setting_page/setting_page.dart';
+import 'package:grad_project/view/profile_page/profile_page.dart';
 
 class MyHomePage extends StatelessWidget {
   final String uID;
