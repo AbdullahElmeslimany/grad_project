@@ -5,7 +5,8 @@ import 'package:get/get.dart';
 import '../edit_project/edit_project.dart';
 
 class ProjectDetials extends StatelessWidget {
-  const ProjectDetials({super.key});
+  final data;
+  const ProjectDetials({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +61,7 @@ class ProjectDetials extends StatelessWidget {
                     children: [
                       Center(
                           child: Text(
-                        "نظافة حي غرب المنصورة",
+                        data["name"],
                         style: TextStyle(
                             fontSize: 19,
                             fontWeight: FontWeight.w900,
@@ -80,9 +81,9 @@ class ProjectDetials extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                     color: Colors.grey.shade500),
                               ),
-                              const Text(
-                                "نظم معلومات",
-                                style: TextStyle(
+                              Text(
+                                data["grad"],
+                                style: const TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w900,
                                 ),
@@ -99,9 +100,9 @@ class ProjectDetials extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                     color: Colors.grey.shade500),
                               ),
-                              const Text(
-                                "2022",
-                                style: TextStyle(
+                              Text(
+                                data["year"],
+                                style: const TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w900,
                                 ),
@@ -118,9 +119,9 @@ class ProjectDetials extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                     color: Colors.grey.shade500),
                               ),
-                              const Text(
-                                "البيئة",
-                                style: TextStyle(
+                              Text(
+                                data["problem"],
+                                style: const TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w900,
                                 ),
@@ -145,7 +146,7 @@ class ProjectDetials extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
-                        "د/ فاطمة الزهراء احمد عبد الغني",
+                        data["dr"],
                         style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
@@ -183,14 +184,14 @@ class ProjectDetials extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(
-                            "م/ مريم سليم",
+                            data["acctant"][0],
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 13,
                                 color: Colors.grey.shade500),
                           ),
                           Text(
-                            "م/اسراء أحمد",
+                            data["acctant"][1],
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 13,
@@ -266,7 +267,7 @@ class ProjectDetials extends StatelessWidget {
                       Directionality(
                         textDirection: TextDirection.rtl,
                         child: Text(
-                          '''موقع نظافة لحي غرب المنصورة يهدف النظام الي توفير جدول زمني عن خدمات نظافة للقمامة وتنظيف الحدائق وتوفير عربيات تنظيف الطرق ايضا توفير صفحة خاصة بالشكاوي للإبلاغ عن الاشخاص الذين يلقون القمامة بالشوارع ويجب علي الجهة المستخدمة للنظام سرعه الاستجابة للتخلص من هذا الوباء , كما ان النظام يوفر خدمة توفير صناديق بلاستيك بمقابل مادي ''',
+                          data["idea"],
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 13,

@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:grad_project/view/progect_detials/project_detials.dart';
-
 import '../../model_view/bloc/categoris_cubit/get_categoris_data_cubit.dart';
 
 class CategorisPage extends StatelessWidget {
@@ -56,7 +55,9 @@ class CategorisPage extends StatelessWidget {
                         return FadeInUpBig(
                           child: InkWell(
                             onTap: () {
-                              Get.to(const ProjectDetials());
+                              Get.to(ProjectDetials(
+                                data: state.data[index],
+                              ));
                             },
                             child: Container(
                               padding: const EdgeInsets.all(15),
