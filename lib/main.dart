@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grad_project/view/home/homepage.dart';
 import 'package:grad_project/model_view/bloc/login_regester_cubit/login_and_regester_cubit.dart';
+import 'model_view/bloc/Add_Project_cubit/add_project_cubit.dart';
 import 'model_view/bloc/cubit_image/select_image_cubit.dart';
 import 'view/add_project/add_project.dart';
 import 'model_view/bloc/categoris_cubit/get_categoris_data_cubit.dart';
@@ -36,6 +37,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<GetDataProfileCubit>(
           create: (BuildContext context) => GetDataProfileCubit(),
+        ),
+        BlocProvider<AddProjectCubit>(
+          create: (BuildContext context) => AddProjectCubit(),
         ),
       ],
       child: GetMaterialApp(
