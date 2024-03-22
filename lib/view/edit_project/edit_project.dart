@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../model_view/textfromfieldcustom.dart';
 import '../../model_view/bloc/cubit_image/select_image_cubit.dart';
 
-class AddProject extends StatelessWidget {
-  const AddProject({super.key});
+class EditProject extends StatelessWidget {
+  const EditProject({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class AddProject extends StatelessWidget {
       appBar: AppBar(
         title: const Center(
             child: Text(
-          "اضافة مشروع",
+          "تعديل المشروع",
           style: TextStyle(fontWeight: FontWeight.bold),
         )),
       ),
@@ -35,33 +35,6 @@ class AddProject extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const Gap(20),
-                    if (BlocProvider.of<SelectImageCubit>(context).isdata ==
-                        true)
-                      InkWell(
-                        onTap: () {
-                          BlocProvider.of<SelectImageCubit>(context)
-                              .selectImage();
-                        },
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.circular(25),
-                            child: Image.file(
-                              BlocProvider.of<SelectImageCubit>(context)
-                                  .imagefile!,
-                              height: 150,
-                              width: 450,
-                              fit: BoxFit.fitHeight,
-                            )),
-                      )
-                    else
-                      IconButton(
-                          onPressed: () {
-                            BlocProvider.of<SelectImageCubit>(context)
-                                .selectImage();
-                          },
-                          icon: const Icon(
-                            Icons.add_a_photo,
-                            size: 50,
-                          )),
                     const Gap(20),
                     textFromFieldcustom(
                         rtl: true,

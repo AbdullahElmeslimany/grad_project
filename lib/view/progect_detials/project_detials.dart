@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+
+import '../edit_project/edit_project.dart';
 
 class ProjectDetials extends StatelessWidget {
   const ProjectDetials({super.key});
@@ -10,7 +13,9 @@ class ProjectDetials extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(const EditProject());
+              },
               icon: Icon(
                 Icons.edit_outlined,
                 size: 30,
