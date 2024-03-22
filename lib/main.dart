@@ -8,6 +8,7 @@ import 'package:grad_project/view/home/homepage.dart';
 import 'package:grad_project/model_view/bloc/login_regester_cubit/login_and_regester_cubit.dart';
 import 'model_view/bloc/cubit_image/select_image_cubit.dart';
 import 'view/add_project/add_project.dart';
+import 'model_view/bloc/categoris_cubit/get_categoris_data_cubit.dart';
 import 'view/login_signup/login.dart';
 import 'view/search_page/search_page.dart';
 
@@ -28,6 +29,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<LoginAndRegesterCubit>(
           create: (BuildContext context) => LoginAndRegesterCubit(),
+        ),
+        BlocProvider<GetCategorisDataCubit>(
+          create: (BuildContext context) => GetCategorisDataCubit(),
         ),
       ],
       child: GetMaterialApp(

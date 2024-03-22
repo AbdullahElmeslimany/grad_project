@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grad_project/model_view/constant/category_list.dart/category_list_constant.dart';
-import 'package:grad_project/view/book_page/categoris_page.dart';
+import 'package:grad_project/view/categoris_page/categoris_page.dart';
 
 categoryCard() {
   return Container(
