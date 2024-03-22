@@ -9,8 +9,15 @@ class ProjectDetials extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.edit_outlined,
+                size: 30,
+                color: Colors.grey[900],
+              )),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(right: 10.0),
             child: IconButton(
                 onPressed: () {},
                 icon: Icon(
@@ -18,7 +25,7 @@ class ProjectDetials extends StatelessWidget {
                   size: 30,
                   color: Colors.blue[900],
                 )),
-          )
+          ),
         ],
       ),
       body: SingleChildScrollView(

@@ -60,7 +60,7 @@ class MyHomePage extends StatelessWidget {
                             Get.to(const AddProject());
                           },
                           icon: const Icon(
-                            Icons.playlist_add_sharp,
+                            Icons.add_rounded,
                             size: 32,
                           ))
                     else

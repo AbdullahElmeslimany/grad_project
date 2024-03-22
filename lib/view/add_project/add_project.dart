@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../model_view/textfromfieldcustom.dart';
-import '../../model/cubit/select_image_cubit.dart';
+import '../../model_view/bloc/cubit_image/select_image_cubit.dart';
 
 class AddProject extends StatelessWidget {
   const AddProject({super.key});
@@ -59,7 +59,7 @@ class AddProject extends StatelessWidget {
                                 .selectImage();
                           },
                           icon: const Icon(
-                            Icons.image,
+                            Icons.add_a_photo,
                             size: 50,
                           )),
                     const Gap(20),

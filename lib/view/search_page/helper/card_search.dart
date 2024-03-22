@@ -14,7 +14,7 @@ cardSearch(BuildContext context) {
     margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
     decoration: BoxDecoration(
-        color: const Color.fromARGB(230, 66, 192, 175),
+        color: const Color.fromARGB(121, 215, 215, 215),
         borderRadius: BorderRadius.circular(10)),
     child: Column(
       // mainAxisAlignment: MainAxisAlignment.center,
