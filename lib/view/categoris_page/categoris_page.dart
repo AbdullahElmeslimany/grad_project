@@ -104,10 +104,9 @@ class CategorisPage extends StatelessWidget {
                                             style:
                                                 const TextStyle(fontSize: 13),
                                           ),
-                                          Text(
-                                            " المشاريع مقتبس منها : ${projects[index]["number"]}",
-                                            style:
-                                                const TextStyle(fontSize: 13),
+                                          const Text(
+                                            " المشاريع مقتبس منها : 2",
+                                            style: TextStyle(fontSize: 13),
                                           ),
                                         ],
                                       ))
