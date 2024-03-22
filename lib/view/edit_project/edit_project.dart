@@ -6,16 +6,23 @@ import '../../model_view/textfromfieldcustom.dart';
 import '../../model_view/bloc/cubit_image/select_image_cubit.dart';
 
 class EditProject extends StatelessWidget {
-  const EditProject({super.key});
+  final data;
+  const EditProject({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController nameProjectController = TextEditingController();
-    TextEditingController yearProjectController = TextEditingController();
-    TextEditingController drProjectController = TextEditingController();
-    TextEditingController asstanst1ProjectController = TextEditingController();
-    TextEditingController asstanst2ProjectController = TextEditingController();
-    TextEditingController ideaProjectController = TextEditingController();
+    TextEditingController nameProjectController =
+        TextEditingController(text: data["name"]);
+    TextEditingController yearProjectController =
+        TextEditingController(text: data["year"]);
+    TextEditingController drProjectController =
+        TextEditingController(text: data["dr"]);
+    TextEditingController asstanst1ProjectController =
+        TextEditingController(text: data["acctant"][0]);
+    TextEditingController asstanst2ProjectController =
+        TextEditingController(text: data["acctant"][1]);
+    TextEditingController ideaProjectController =
+        TextEditingController(text: data["idea"]);
     return Scaffold(
       appBar: AppBar(
         title: const Center(
@@ -39,6 +46,7 @@ class EditProject extends StatelessWidget {
                     textFromFieldcustom(
                         rtl: true,
                         hight: 18,
+                        backgroundAnable: true,
                         width: MediaQuery.sizeOf(context).width - 30,
                         controller: nameProjectController,
                         text: "اسم المشروع"),
@@ -46,6 +54,7 @@ class EditProject extends StatelessWidget {
                     textFromFieldcustom(
                         rtl: true,
                         hight: 18,
+                        backgroundAnable: true,
                         width: MediaQuery.sizeOf(context).width - 30,
                         controller: yearProjectController,
                         keyboardType: TextInputType.number,
@@ -54,6 +63,7 @@ class EditProject extends StatelessWidget {
                     textFromFieldcustom(
                         rtl: true,
                         hight: 18,
+                        backgroundAnable: true,
                         width: MediaQuery.sizeOf(context).width - 30,
                         controller: drProjectController,
                         text: "اسم المشرف"),
@@ -64,12 +74,14 @@ class EditProject extends StatelessWidget {
                         textFromFieldcustom(
                             rtl: true,
                             hight: 18,
+                            backgroundAnable: true,
                             width: MediaQuery.sizeOf(context).width / 2.3,
                             controller: asstanst1ProjectController,
                             text: "اسم المعيد  1"),
                         textFromFieldcustom(
                             rtl: true,
                             hight: 18,
+                            backgroundAnable: true,
                             width: MediaQuery.sizeOf(context).width / 2.3,
                             controller: asstanst2ProjectController,
                             text: "اسم المعيد  2"),
@@ -81,6 +93,7 @@ class EditProject extends StatelessWidget {
                         length: true,
                         rtl: true,
                         hight: 18,
+                        backgroundAnable: true,
                         width: MediaQuery.sizeOf(context).width - 30,
                         controller: ideaProjectController,
                         text: "فكرة المشروع"),

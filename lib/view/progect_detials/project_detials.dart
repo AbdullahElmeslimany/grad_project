@@ -15,7 +15,9 @@ class ProjectDetials extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-                Get.to(const EditProject());
+                Get.to(EditProject(
+                  data: data,
+                ));
               },
               icon: Icon(
                 Icons.edit_outlined,
