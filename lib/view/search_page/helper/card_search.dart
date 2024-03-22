@@ -1,11 +1,15 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../model_view/constant/list/list_data.dart';
 import '../../../model_view/textfromfieldcustom.dart';
+import '../../../model_view/bloc/search_cubit/search_and_filter_cubit.dart';
 
 cardSearch(BuildContext context) {
+  final cubit = BlocProvider.of<SearchAndFilterCubit>(context);
+
   TextEditingController nameValueSearch = TextEditingController();
 
   String? selectedValue;
@@ -161,7 +165,9 @@ cardSearch(BuildContext context) {
           decoration: BoxDecoration(
               color: Colors.blue[800], borderRadius: BorderRadius.circular(13)),
           child: MaterialButton(
-            onPressed: () {},
+            onPressed: () {
+              cubit.filterdata(nameValueSearch.text);
+            },
             child: Text(
               "بحث",
               style: GoogleFonts.alexandria(

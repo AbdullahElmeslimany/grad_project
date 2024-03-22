@@ -6,11 +6,13 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grad_project/view/home/homepage.dart';
 import 'package:grad_project/model_view/bloc/login_regester_cubit/login_and_regester_cubit.dart';
+import 'package:grad_project/view/splach_screen/splach_screen.dart';
 import 'model_view/bloc/Add_Project_cubit/add_project_cubit.dart';
 import 'model_view/bloc/cubit_image/select_image_cubit.dart';
 import 'view/add_project/add_project.dart';
 import 'model_view/bloc/categoris_cubit/get_categoris_data_cubit.dart';
 import 'view/login_signup/login.dart';
+import 'model_view/bloc/search_cubit/search_and_filter_cubit.dart';
 import 'view/search_page/search_page.dart';
 import 'model_view/bloc/profile_cubit/get_data_profile_cubit.dart';
 
@@ -40,6 +42,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<AddProjectCubit>(
           create: (BuildContext context) => AddProjectCubit(),
+        ),
+        BlocProvider<SearchAndFilterCubit>(
+          create: (BuildContext context) => SearchAndFilterCubit(),
         ),
       ],
       child: GetMaterialApp(

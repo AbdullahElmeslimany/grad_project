@@ -22,7 +22,7 @@ textFromFieldcustom({
       obscureText: pass,
       textDirection: rtl == true ? TextDirection.ltr : TextDirection.rtl,
       maxLines: maxLines,
-      maxLength: length == true ? 250 : null,
+      maxLength: length == true ? 350 : null,
       validator: (value) {
         if (value == null || value.isEmpty) {
           return '* يرجي اكمال البيانات';

@@ -18,13 +18,13 @@ yearsCategorise() {
       itemBuilder: (BuildContext context, int index) {
         return InkWell(
           onTap: () {
-            Get.to(CategorisPage(name: "${2018 + index}"));
+            Get.to(CategorisPage(name: 2019 + index));
           },
           child: Container(
             margin: const EdgeInsets.all(5),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(15)),
-            child: Center(child: Text("${2018 + index}")),
+            child: Center(child: Text("${2019 + index}")),
           ),
         );
       },

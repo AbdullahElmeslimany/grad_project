@@ -7,7 +7,7 @@ import 'package:grad_project/view/progect_detials/project_detials.dart';
 import '../../model_view/bloc/categoris_cubit/get_categoris_data_cubit.dart';
 
 class CategorisPage extends StatelessWidget {
-  final String name;
+  final name;
   const CategorisPage({super.key, required this.name});
 
   @override
@@ -24,7 +24,7 @@ class CategorisPage extends StatelessWidget {
         ),
         title: Center(
             child: Text(
-          name,
+          name.toString(),
           style: const TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
         )),
       ),

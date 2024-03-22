@@ -4,3 +4,5 @@ part of 'add_project_cubit.dart';
 sealed class AddProjectState {}
 
 final class AddProjectInitial extends AddProjectState {}
+
+final class SucessAddState extends AddProjectState {}

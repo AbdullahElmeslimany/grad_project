@@ -40,6 +40,7 @@ class GetDataProfileCubit extends Cubit<GetDataProfileState> {
       final user = FirebaseAuth.instance.currentUser;
 
       await user?.updatePassword(newpassword);
+      Get.snackbar("تمت تعديل البيانات بنجاح", "");
     });
 
     print(data[0]["name"]);

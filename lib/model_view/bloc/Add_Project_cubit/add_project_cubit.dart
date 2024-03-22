@@ -7,7 +7,7 @@ part 'add_project_state.dart';
 
 class AddProjectCubit extends Cubit<AddProjectState> {
   AddProjectCubit() : super(AddProjectInitial());
-  add(
+  addProject(
       {required String name,
       required String year,
       required String problem,
@@ -17,7 +17,7 @@ class AddProjectCubit extends Cubit<AddProjectState> {
       required List acctant}) async {
     CollectionReference project =
         FirebaseFirestore.instance.collection('project');
-    project.add({
+    await project.add({
       "dr": dr,
       "acctant": acctant,
       "grad": grad,
@@ -26,8 +26,8 @@ class AddProjectCubit extends Cubit<AddProjectState> {
       "problem": problem,
       "year": year,
     }).then((value) {
-      Get.snackbar("تمت الاضافة بنجاح", "");
-      Get.back();
+      Get.snackbar("تمت الاضافة مشروع جديد بنجاح", "");
     });
+    emit(SucessAddState());
   }
 }

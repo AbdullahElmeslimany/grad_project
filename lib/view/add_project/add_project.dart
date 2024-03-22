@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grad_project/model_view/bloc/Add_Project_cubit/add_project_cubit.dart';
 import '../../model_view/textfromfieldcustom.dart';
@@ -135,9 +136,9 @@ class AddProject extends StatelessWidget {
                             color: Colors.cyan[800],
                             borderRadius: BorderRadius.circular(10)),
                         child: MaterialButton(
-                          onPressed: () {
+                          onPressed: () async {
                             if (addProjectKey.currentState!.validate()) {
-                              cubit.add(
+                              await cubit.addProject(
                                 name: nameProjectController.text,
                                 year: yearProjectController.text,
                                 problem: selectedValue.text,
@@ -149,6 +150,8 @@ class AddProject extends StatelessWidget {
                                   asstanst2ProjectController.text
                                 ],
                               );
+
+                              Navigator.of(context).pop();
                             }
                           },
                           child: Text(
