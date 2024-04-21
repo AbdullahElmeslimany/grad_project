@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grad_project/view/progect_detials/project_detials.dart';
 import 'helper/card_search.dart';
 import '../../model_view/bloc/search_cubit/search_and_filter_cubit.dart';
 
@@ -46,7 +48,12 @@ class SearchPage extends StatelessWidget {
                         return ListView.builder(
                           itemCount: state.data.length,
                           itemBuilder: (BuildContext context, int index) {
-                            return Text(state.data[index]["name"]);
+                            return InkWell(
+                                onTap: () {
+                                  Get.to(
+                                      ProjectDetials(data: state.data[index]));
+                                },
+                                child: Text(state.data[index]["name"]));
                           },
                         );
                       }

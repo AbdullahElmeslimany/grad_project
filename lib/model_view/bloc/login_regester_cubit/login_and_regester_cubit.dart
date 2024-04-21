@@ -11,7 +11,9 @@ part 'login_and_regester_state.dart';
 
 class LoginAndRegesterCubit extends Cubit<LoginAndRegesterState> {
   LoginAndRegesterCubit() : super(LoginAndRegesterInitial());
+
   bool loading = false;
+
   login({required String email, required String password}) async {
     loading = true;
     emit(WaitingState());
@@ -23,16 +25,19 @@ class LoginAndRegesterCubit extends Cubit<LoginAndRegesterState> {
       },
     );
 
+    ///firebase
     try {
+      //
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password)
           .then((value) => Get.to(() => MyHomePage(
                 uID: value.user!.uid,
               )));
+      //
       loading = false;
-      emailController.clear();
-      passwordController.clear();
-      loginkey.currentState!.reset();
+      // emailController.clear();
+      // passwordController.clear();
+      // loginkey.currentState!.reset();
       emit(SignUpSuccessState());
     } on FirebaseAuthException catch (e) {
       loading = false;
@@ -62,13 +67,14 @@ class LoginAndRegesterCubit extends Cubit<LoginAndRegesterState> {
       },
     );
     try {
-      final credential = await FirebaseAuth.instance
+      await FirebaseAuth.instance
           .createUserWithEmailAndPassword(
         email: email,
         password: password,
       )
           .then((value) {
         print(value.user!.uid);
+
         FirebaseFirestore.instance.collection("user").add({
           "email": email,
           "name": name,
@@ -80,11 +86,11 @@ class LoginAndRegesterCubit extends Cubit<LoginAndRegesterState> {
               uID: value.user!.uid,
             ));
       });
-      namecontrol.clear();
-      idController.clear();
-      emailRController.clear();
-      passwordRController.clear();
-      regesterKey.currentState!.reset();
+      // namecontrol.clear();
+      // idController.clear();
+      // emailRController.clear();
+      // passwordRController.clear();
+      // regesterKey.currentState!.reset();
       loading = false;
 
       emit(LoginSuccessState());
