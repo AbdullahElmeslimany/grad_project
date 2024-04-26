@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../model_view/bloc/Add_Project_cubit/add_project_cubit.dart';
 import '../../model_view/textfromfieldcustom.dart';
 import '../../model_view/bloc/cubit_image/select_image_cubit.dart';
 
@@ -11,6 +12,7 @@ class EditProject extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubitEdit = BlocProvider.of<AddProjectCubit>(context);
     TextEditingController nameProjectController =
         TextEditingController(text: data["name"]);
     TextEditingController yearProjectController =
@@ -105,7 +107,19 @@ class EditProject extends StatelessWidget {
                           color: Colors.cyan[800],
                           borderRadius: BorderRadius.circular(10)),
                       child: MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          cubitEdit.editProject(
+                            id: data.id,
+                            name: nameProjectController.text,
+                            year: yearProjectController.text,
+                            idea: ideaProjectController.text,
+                            dr: drProjectController.text,
+                            acctant: [
+                              asstanst1ProjectController.text,
+                              asstanst2ProjectController.text
+                            ],
+                          );
+                        },
                         child: Text(
                           "حفظ",
                           style: GoogleFonts.alexandria(

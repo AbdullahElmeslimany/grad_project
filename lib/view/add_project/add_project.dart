@@ -138,6 +138,7 @@ class AddProject extends StatelessWidget {
                         child: MaterialButton(
                           onPressed: () async {
                             if (addProjectKey.currentState!.validate()) {
+                              Navigator.of(context).pop();
                               await cubit.addProject(
                                 name: nameProjectController.text,
                                 year: yearProjectController.text,
@@ -150,8 +151,6 @@ class AddProject extends StatelessWidget {
                                   asstanst2ProjectController.text
                                 ],
                               );
-
-                              Navigator.of(context).pop();
                             }
                           },
                           child: Text(
